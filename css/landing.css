@@ -1,0 +1,274 @@
+@charset "utf-8";
+/* CSS Landing page */
+
+/**************************************************************************************
+*								Table des matières 
+*
+1- Classes globales
+2- Navigation
+3- Slider
+4- Section 2 
+5- Section 3
+6- Section 4
+7- Section 4
+8- Footer
+**************************************************************************************/
+/*************************************************************************************
+1- Classes globales
+*************************************************************************************/
+.blue, .blue a, .blue span {
+  	color: rgb(0, 122, 255);
+	width:46px;
+}
+.blanc, .blanc a {
+  	color: #FFF;
+}
+.separateur {
+	margin-bottom:15px;
+	margin-left:auto;
+	margin-top:15x;
+    max-width: 250px;
+  	border-color: #999999;
+}
+/*************************************************************************************
+2- Navigation
+*************************************************************************************/
+
+.navbar-default{
+	border-top : 2px solid rgb(0, 122, 255);
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.menu {
+	max-width:1200px;
+    padding: auto;
+	margin:auto;
+}
+
+.menu span{
+	
+	}
+
+/*************************************************************************************
+3- Slider
+*************************************************************************************/
+/***************************************
+3.1- Boutons Silder
+***************************************/
+#Sec1{
+	margin-top: 55px;
+}
+/***Zoom***/
+.zoom span{
+	display:inline-block;
+	padding-right:5px;
+}
+.zoom div {
+	margin:auto;
+	padding:auto;
+}
+.zoom a  {
+	display: block;
+	height: 45px;
+	width: 150px;
+	text-align: center;
+	padding: auto;
+	margin:auto;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 2.6em;
+	background: -moz-linear-gradient(center bottom , #349aff 11%, #80c0ff 56%) repeat scroll 0 0 #80c0ff;
+	background: -webkit-gradient(linear,left bottom,left top,color-stop(0.3, #349aff),color-stop(0.65, #80c0ff));
+	border-radius:4px;
+	-moz-box-shadow: 0 0 65px #80c0ff inset, 0 0 20px #349aff inset, 0 0 3px #FFF;
+	-webkit-box-shadow: 0 0 65px #80c0ff inset, 0 0 20px #349aff inset, 0 0 3px #FFF;
+	box-shadow: 0 0 65px #80c0ff inset, 0 0 20px #349aff inset, 0 0 3px #FFF;
+	-moz-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.zoom a:hover,
+.zoom a:focus {
+	transform: scale(1.2);
+	box-shadow: 0 0 65px #FFF inset, 0 0 20px #BEAE8C inset, 0 0 15px #CCC;
+}
+/***************************************
+3.2- Boutons sociaux Slider
+***************************************/
+#SOC{
+	
+	color:rgb(0, 122, 255);
+	
+
+}
+/*************************************************************************************
+4- Section 2 : Notre expertise
+*************************************************************************************/
+.expertise{
+	max-width:980px;
+	padding: auto;
+	margin : auto;
+	}
+.exp{
+	margin-top:50px;
+	margin-bottom:50px;
+}
+
+/***Rotation***/
+.Rot {
+-moz-transition-duration:ease-in-out;
+-moz-transition-timing-function:ease-in-out;
+-webkit-transition-duration:2s;
+-webkit-transition-timing-function:ease-in-out;
+transition-duration:2s;
+transition-timing-function: ease-in-out;
+}
+
+.Rot :hover {
+-moz-transform:rotate(360deg);
+-webkit-transform:rotate(360deg);
+-ms-transform: rotate(360deg);
+-o-transform:  rotate(0deg);
+transform:rotate(360deg);
+}
+/*************************************************************************************
+5- Section 3
+*************************************************************************************/
+/***************************************
+5.1- Tabs
+***************************************/
+
+
+.XZ{
+	  max-width:1200px;
+	  padding:auto;
+	  margin:auto;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+  color: #fff;
+  background-color: rgb(0, 122, 255);
+}
+.panel-heading span{
+	display:inline-block;
+	
+}
+/***************************************
+5.2- Accordeon 
+***************************************/
+#bordure{
+	border-top : 2px solid #007aff;
+				
+}
+.enligne span {
+	display:inline-block;
+	padding-right:4px;
+}
+
+
+
+/*************************************************************************************
+6- Section 4
+*************************************************************************************/
+/***************************************
+6.1- Liste 
+***************************************/
+
+
+
+.equipe{
+	max-width:1200px;
+	padding:auto;
+	margin:auto;
+
+}
+.equipe ul{
+	max-width:1200px;
+	padding:auto;
+	margin:auto;
+
+}
+
+		
+.team li
+	{
+	
+	list-style-type: none;
+	margin-left:0px;
+	padding-top:8px;
+	padding-bottom:8px;
+	padding-left:4px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border-bottom:solid ;
+	border-width:0px 0px 1px 0px;
+	border-color:rgba(0, 0, 0, 0.1);
+	
+	
+	}
+.listim
+	{
+	vertical-align:top;	
+	padding-left:25px;
+	color:#7f8589;
+	}
+.listim2
+	{
+	vertical-align:top;	
+	padding-left:0px;
+	color:#7f8589;
+	}
+.gras
+	{
+	font-weight: bold;
+	}
+#plus
+	{
+	color : #0099ff;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	
+	}
+	
+.team li:hover { 
+  
+ border-radius: 20%;
+ 
+
+	}
+.team li:hover img { 
+-ms-transform: rotate(180deg); /* IE 9 */
+-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+transform: rotate(180deg);
+	
+  
+ 	}
+.team img {
+-moz-transition-duration:2s;
+-moz-transition-timing-function:linear;
+-webkit-transition-duration:2s;
+-webkit-transition-timing-function:linear;
+transition-duration:2s;
+transition-timing-function:linear;
+}
+/*Rotation Image Equipe*/	
+	.Rotteam img {
+-moz-transition-duration:4s;
+-moz-transition-timing-function:linear;
+-webkit-transition-duration:4s;
+-webkit-transition-timing-function:linear;
+transition-duration:4s;
+transition-timing-function:linear;
+}
+
+.Rotteam img:hover {
+-moz-transform:rotate(360deg);
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg);
+}
+/*************************************************************************************
+6- Section 5
+*************************************************************************************/
+.services{
+		max-width:1200px;
+		padding:auto;
+		margin:auto;
+	}

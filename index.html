@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test Applidget</title>
+<!-- CSS Bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!--jQuery-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--JS Bootstrap-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+</head>
+<style>
+.globale{
+	max-width:1200px;
+	padding:auto;
+	margin:auto;
+}
+.formulaire{
+	max-width:450px;
+}
+.globale span{
+	display:inline-block;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+}
+
+</style>
+<body>
+<div id="" class="container globale">
+
+<span><input type="text" class="form-control formulaire" placeholder="Veuillez saisir votre URL"></span><span><button id="BTN1" type="button" class="btn btn-primary">Ajouter</button></span>
+     
+<ul id="ImageS-Liste">
+	
+</ul>
+
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+$(document).ready(function() {		
+
+		
+	$( "#BTN1").on( "click", function() {
+    		
+			var UrlSaisie= $('input').val();
+			var historique = [];//historique des URLs
+			var compte = 0;//Nombre d'URLs
+			
+			historique[compte]=UrlSaisie;
+			var id = "bt" +compte +"eff";
+			var ClassImage = "cl" +compte +"img";
+	        for( compte = 0; compte<localStorage.length; compte++)
+			alert("La classe de l'image est :"+ClassImage+"");//Vérification de la variable classe de de l'image
+			alert("L'ID de votre bouton est :"+id+"");//Vérification de la variable classe de de l'image
+			alert("l'URL de votre image est : "+UrlSaisie+" et le nombre des URLs saisies est :"+compte+"");//Vérification de la variable UrlSaisie et compte
+			
+			var Contenu="<li><img class="+id+" src="+UrlSaisie+"/><span><button id='"+ id +"'>Supprimer</button></span><span>L'url de votre image est :"+UrlSaisie+"</span></li>";
+			
+			var ContenuUrl = "<span>L'url de votre image est :"+UrlSaisie+"</span>";
+			$('.globale ul').append(Contenu);
+			//$("button.btn:last").parent().append(ContenuBTN);
+			$("button#bt0eff ").on("click", function() {
+            //alert("Votre image va être supprimée" );
+			$(this).parent().parent().hide(1500,'swing');
+			//$(this).hide(1500,'swing');
+			
+    });
+
+	//compte++;//Le nombre d'URLs saisies		
+});		
+});
+
+</script>			
+
+</body>
+</html>
