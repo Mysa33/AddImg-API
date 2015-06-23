@@ -2,9 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Test Applidget</title>
+<title>AddImg-API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" itemprop="description" content="AddImg-API responsive" />
+<meta name="keywords" itemprop="keywords" content="html5, css3, bootstrap 3, jquery, jquery ui" />
+<meta name="author" content="Sami Tlili">
+<!--Open graph-->
+<meta property="og:url" content="http://www.samitlili.com" />
+<meta property="og:image" content="http://mon-site.com/image.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="API simple responsive" />
+<meta property="og:description" content="API qui permet d'ajouter des image à partir d'une URL." />
+<meta property="og:locale" content="fr_FR" />
 <!-- CSS Bootstrap-->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!-- CSS Font-awesome-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- CSS Template-->
+<link href="css/AddImg-API.css" rel="stylesheet" type="text/css"/>
 <!--jQuery-->
 <script type="text/javascript" src="js/jquery.js"></script>
 <!--JS Bootstrap-->
@@ -12,68 +27,132 @@
 
 
 </head>
+
+<body>
+
+ <div class="header-api"><!--.header-api-->
+	<nav class="navbar navbar-default navbar-static-top  navbar-inverse"><!--.navbar-->
+  	<div class="container-fluid navigation"><!--.container-fluid-->
+    	<div class="navbar-header"><!--.navbar-header-->
+      	<a class="navbar-brand" href="index.html">
+        <i class="fa fa-picture-o fa-1x blue"></i>
+      	</a>
+      
+    	</div><!--/.navbar-header-->
+    	<div>
+        	<form class="navbar-form navbar-left" role="search">
+        		<div class="form-group">
+          			<input type="text" class="form-control formulaire" placeholder="Veuillez saisir votre URL">
+        		</div>
+        		<button id="BTN1" type="button" class="btn btn-primary"><i class="fa fa-check-square-o"></i>Ajouter</button>
+                <button id="BTN2" type="button" class="btn btn-primary"><i class="fa fa-refresh"></i>Rafraichir</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-github"></i>Github</button>
+        	</form>
+   		</div>
+        <div class="form-group navbar-left">
+        	
+        </div>
+        
+  	</div><!--/.container-fluid-->
+ </nav><!--/.navbar-->
+</div><!--/.header-api-->
+
+<div id="" class="container globale"><!--.container-->
+		<div class="row"><!--.row-->
+        	<div class="col-md-8 "><!--Images et boutton supprimer-->
+            	<div class="list-group"><ul id="ImageS-Liste"></ul></div>
+            </div><!--Images et boutton supprimer-->
+            <div class="col-md-4"><!--URLs des images-->
+            </div>
+            
+        </div><!--/.row-->
+
+
+     
+
+
+</div><!--/.container-->
 <style>
-.globale{
-	max-width:1200px;
-	padding:auto;
-	margin:auto;
-}
-.formulaire{
-	max-width:450px;
-}
-.globale span{
-	display:inline-block;
-	padding-bottom:10px;
-	padding-left:10px;
-	padding-right:10px;
-	padding-top:10px;
-}
+
 
 </style>
-<body>
-<div id="" class="container globale">
+<footer>
+	<div class="container"><!--.container-fluid-->
+    	<div class="row"><!--.row-->
+        	<div class="col-md-4 credits">
+            	<p><i class="fa fa-download fa-1x blue"></i><span>Télécharger</span></p>
+                <p><i class="fa fa-angle-double-right fa-1x blue"></i><span>Démo</span></p>
+                <p><i class="fa fa-hand-o-right fa-1x blue"></i><span>Voir d'autres Template</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            </div>
+            
+            <div class="col-md-4 credits">
+            	<p><i class="fa fa-code fa-1x blanc"></i><span class="blue">Sami Tlili</span></p>
+                <p><i class="fa fa-external-link-square fa-1x blanc"></i><span class="blue">Lorempixel.com</span></p>
+                <p><i class="fa fa-hand-o-right fa-1x blanc"></i><span class="blue">Voir d'autres Template</span></p>
+            </div>
+            
+        </div><!--/.row-->
+    </div><!--/.container--fluid-->
+</footer>
 
-<span><input type="text" class="form-control formulaire" placeholder="Veuillez saisir votre URL"></span><span><button id="BTN1" type="button" class="btn btn-primary">Ajouter</button></span>
-     
-<ul id="ImageS-Liste">
+<script>
+//Actualiser la page
 	
-</ul>
-
-</div>
-<script type="text/javascript" src="js/jquery.js"></script>
-	<script>
-$(document).ready(function() {		
-
+	$( "#BTN2").on( "click", function() {
+		alert("Permet d'actualiser votre API");
+		localStorage.clear();
+		location.reload();
+			});
 		
+			
+//Ajouter et supprimer des images
+	
 	$( "#BTN1").on( "click", function() {
     		
-			var UrlSaisie= $('input').val();
-			var historique = [];//historique des URLs
-			var compte = 0;//Nombre d'URLs
 			
-			historique[compte]=UrlSaisie;
-			var id = "bt" +compte +"eff";
-			var ClassImage = "cl" +compte +"img";
-	        for( compte = 0; compte<localStorage.length; compte++)
-			alert("La classe de l'image est :"+ClassImage+"");//Vérification de la variable classe de de l'image
-			alert("L'ID de votre bouton est :"+id+"");//Vérification de la variable classe de de l'image
-			alert("l'URL de votre image est : "+UrlSaisie+" et le nombre des URLs saisies est :"+compte+"");//Vérification de la variable UrlSaisie et compte
+		var UrlSaisie= $('input').val();
+		var compte = 0;//Nombre d'URLs
+		var historique = [];//historique des URLs
+		historique[compte]=UrlSaisie;
+		for( compte = 0; compte<localStorage.length; compte++)
+		//compte++;//Le nombre d'URLs saisies
+		var A= compte++;
+		alert("La valeur de A est"+A+"");		
+		//Varibales classe et ID
+		var IdBtn = "bt" +compte+"eff";
+		var ClassImage = "cl" +compte +"img";
+	        		
 			
-			var Contenu="<li><img class="+id+" src="+UrlSaisie+"/><span><button id='"+ id +"'>Supprimer</button></span><span>L'url de votre image est :"+UrlSaisie+"</span></li>";
+		alert("La classe de l'image est :"+ClassImage+"");//Vérification de la variable classe de de l'image
+		alert("L'ID de votre bouton est :"+IdBtn+"");//Vérification de la variable classe de de l'image
+		alert("l'URL de votre image est : "+UrlSaisie+" et le nombre des URLs saisies est :"+compte+"");//Vérification de la variable UrlSaisie et compte
 			
-			var ContenuUrl = "<span>L'url de votre image est :"+UrlSaisie+"</span>";
-			$('.globale ul').append(Contenu);
-			//$("button.btn:last").parent().append(ContenuBTN);
-			$("button#bt0eff ").on("click", function() {
-            //alert("Votre image va être supprimée" );
-			$(this).parent().parent().hide(1500,'swing');
-			//$(this).hide(1500,'swing');
 			
-    });
+		//Le contenu à ajouter
+		var Contenu="<li><img class="+ClassImage+" src="+UrlSaisie+"/><span><button id='"+ IdBtn+"'>Supprimer</button></span><span><i class='fa fa-check-square-o blue'></i>L'url de votre image est :"+UrlSaisie+"		</span></li>";
+			
+		
+		$('.globale ul').append(Contenu);
+		$( "img" ).addClass( "img-thumbnail" );//On ajoute à toutes les images la classe Bootstrap .img-tumbnail
+		$( "button#bt0eff" ).addClass( "btn-primary" );//On ajoute à toutes les images la classe Bootstrap .btn-primary
+			
+		$("button#bt0eff ").on("click", function() {
+        //alert("Votre image va être supprimée" );
+		$(this).parent().parent().hide(1500,'swing');
+				
+    	});
 
-	//compte++;//Le nombre d'URLs saisies		
+	compte++;//Le nombre d'URLs saisies		
+			
 });		
-});
+	
+
+
+	
+
 
 </script>			
 
