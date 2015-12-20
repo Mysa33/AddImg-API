@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>AddImg-API</title>
@@ -24,6 +24,8 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <!--JS Bootstrap-->
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--JS Bootstrap-->
+<script type="text/javascript" src="js/addImgApi.js"></script>
 
 
 </head>
@@ -40,7 +42,7 @@
       
     	</div><!--/.navbar-header-->
     	<div>
-        	<form class="navbar-form navbar-left" role="search">
+        	<form class="navbar-form navbar-left">
         		<div class="form-group">
           			<input type="text" class="form-control formulaire" placeholder="Veuillez saisir votre URL">
         		</div>
@@ -97,64 +99,7 @@
         </div><!--/.row-->
     </div><!--/.container--fluid-->
 </footer>
-
-<script>
-//Actualiser la page
 	
-	$( "#BTN2").on( "click", function() {
-		alert("Permet d'actualiser votre API");
-		localStorage.clear();
-		location.reload();
-			});
-		
-			
-//Ajouter et supprimer des images
-	
-	$( "#BTN1").on( "click", function() {
-    		
-			
-		var UrlSaisie= $('input').val();
-		var compte = 0;//Nombre d'URLs
-		var historique = [];//historique des URLs
-		historique[compte]=UrlSaisie;
-		for( compte = 0; compte<localStorage.length; compte++)
-		//var A= compte++;
-		//alert("La valeur de A est"+A+"");		
-		
-		//Varibales classe et ID
-		var IdBtn = "bt" +compte+"eff";
-		var ClassImage = "cl" +compte +"img";
-	        		
-			
-		//alert("La classe de l'image est :"+ClassImage+"");//Vérification de la variable classe de de l'image
-		//alert("L'ID de votre bouton est :"+IdBtn+"");//Vérification de la variable classe de de l'image
-		alert("l'URL de votre image est : "+UrlSaisie+" et le nombre des URLs saisies est :"+compte+"");//Vérification de la variable UrlSaisie et compte
-			
-			
-		//Le contenu à ajouter
-		var Contenu="<li><img class="+ClassImage+" src="+UrlSaisie+"/><span><button id='"+ IdBtn+"'>Supprimer</button></span><span><i class='fa fa-check-square-o blue'></i>L'url de votre image est :"+UrlSaisie+"		</span></li>";
-			
-		
-		$('.globale ul').append(Contenu);
-		$( "img" ).addClass( "img-thumbnail" );//On ajoute à toutes les images la classe Bootstrap .img-tumbnail
-		$( "button#bt0eff" ).addClass( "btn-primary" );//On ajoute à toutes les images la classe Bootstrap .btn-primary
-			
-		$("button#bt0eff ").on("click", function() {
-        //alert("Votre image va être supprimée" );
-		$(this).parent().parent().hide(1500,'swing');
-				
-    	});
-
-	compte++;//Le nombre d'URLs saisies		
-			
-});		
-	
-
-
-	
-
-
-</script>			
 
 </body>
 </html>
